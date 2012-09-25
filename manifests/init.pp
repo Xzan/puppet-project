@@ -4,9 +4,9 @@ class project(
 
 				$php = true,
 				$db = true,
-				$dbname = 'socialnetwork',
-				$dbuser = 'socialnetwork',
-				$dbpass = 'socialnetwork_user',
+				$dbname = 'puppet',
+				$dbuser = 'puppet',
+				$dbpass = 'puppet_user',
 				$dbdumppath = "/vagrant/db_snapshot",
 
 				$sitepath = "/var/www",
