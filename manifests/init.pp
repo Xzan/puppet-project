@@ -1,5 +1,5 @@
 class project(
-				$domainname => "$domain",
+				$domainname = "$domain",
 				$host = 'www.project.dev',
 
 				$php = true,
