@@ -1,6 +1,6 @@
-class project::web($phpmyadmin = true){
+class project::web($db = true, $php = true, $phpmyadmin = true){
 
-	if $phpmyadmin == true {
+	if $db == true and $php == true and $phpmyadmin == true {
 		package { "phpmyadmin":
 			ensure => installed,
 		}

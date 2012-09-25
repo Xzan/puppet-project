@@ -2,6 +2,9 @@ class project::setup(
 						$domainname,
 						$hostname = "localhost",
 						$sitepath = "/var/www",
+
+						$db = true,
+						$php = true,
 	){
 
 	#To correct a bug in VBox in OSX Lion, put Google DNS Servers
@@ -26,9 +29,13 @@ class project::setup(
 		sitepath => $sitepath,
 	}
 
-	class{"php":}
+	if $php == true {
+		class{"php":}
+	}
 
-	class{"mysql":}
+	if $db == true {
+		class{"mysql":}
+	}
 
 	#Make sure that resolvconf is correctly set before any update
 	Resolv_conf["domain"] -> Exec["apt-get update"] -> Package <| |>

@@ -5,6 +5,7 @@ class project::sql(
 					$dbdumppath = "/vagrant/db_snapshot"
 	) {
 
+
 	class { "mysql::create":
 		dbuser => $dbuser,
 		dbpass => $dbpass,
@@ -17,5 +18,6 @@ class project::sql(
 		dbname => $dbname,
 		dbdumppath => $dbdumppath
 	}
+
 
 }
