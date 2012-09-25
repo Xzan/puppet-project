@@ -9,7 +9,7 @@ class project(
 				$dbpass = 'socialnetwork_user',
 				$dbdumppath = "/vagrant/db_snapshot",
 
-				$sitepath = "/vagrant/src/www",
+				$sitepath = "/var/www",
 
 				$phpmyadmin = true,
 	){
