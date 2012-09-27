@@ -5,6 +5,7 @@ class project::setup(
 
 						$db = true,
 						$php = true,
+						$tools = true,
 	){
 
 	#To correct a bug in VBox in OSX Lion, put Google DNS Servers
@@ -35,6 +36,10 @@ class project::setup(
 
 	if $db == true {
 		class{"mysql":}
+	}
+	
+	if $tools == true {
+		class{"tools":}
 	}
 
 	#Make sure that resolvconf is correctly set before any update

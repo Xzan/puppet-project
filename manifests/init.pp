@@ -12,6 +12,8 @@ class project(
 				$sitepath = "/var/www",
 
 				$phpmyadmin = true,
+				
+				$tools = true,
 	){
 
 	class{"project::setup":
@@ -20,6 +22,7 @@ class project(
 		sitepath => $sitepath,
 		db => $db,
 		php => $php,
+		tools => $tools,
 	}
 
 	if $db == true{
