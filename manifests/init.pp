@@ -7,6 +7,7 @@ class project(
 				$dbname = 'puppet',
 				$dbuser = 'puppet',
 				$dbpass = 'puppet_user',
+				$dbrootpass = 'vagrant',
 				$dbdumppath = "/vagrant/db_snapshot",
 
 				$sitepath = "/var/www",
@@ -14,6 +15,7 @@ class project(
 				$phpmyadmin = true,
 				
 				$tools = true,
+				
 	){
 
 	class{"project::setup":
@@ -23,6 +25,7 @@ class project(
 		db => $db,
 		php => $php,
 		tools => $tools,
+		dbrootpass => $dbrootpass,
 	}
 
 	if $db == true{
@@ -31,6 +34,7 @@ class project(
 			dbuser => $dbuser,
 			dbpass => $dbpass,
 			dbdumppath => $dbdumppath,
+			dbrootpass => $dbrootpass,
 		}
 	}
 

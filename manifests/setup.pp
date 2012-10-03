@@ -6,6 +6,7 @@ class project::setup(
 						$db = true,
 						$php = true,
 						$tools = true,
+						$dbrootpass => 'vagrant'
 	){
 
 	#To correct a bug in VBox in OSX Lion, put Google DNS Servers
@@ -35,7 +36,9 @@ class project::setup(
 	}
 
 	if $db == true {
-		class{"mysql":}
+		class{"mysql":
+			dbrootpass => $dbrootpass,
+		}
 	}
 	
 	if $tools == true {
